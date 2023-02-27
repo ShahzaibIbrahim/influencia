@@ -1,0 +1,6 @@
+
+
+1. Add AOP Logging
+4. Check if roles can be inserted into properties file or db
+5. Implement Spring Email Generator with email logging
+6. Signup with google etc.

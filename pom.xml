@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.shah</groupId>
-	<artifactId>starter</artifactId>
+	<artifactId>influencia</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>starter</name>
-	<description>Starter Project Spring Boot</description>
+	<description>Influencia - Marketplace for Social Media Influencers</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

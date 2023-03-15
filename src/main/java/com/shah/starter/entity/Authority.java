@@ -1,4 +1,4 @@
-package com.shah.starter.model;
+package com.shah.starter.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;

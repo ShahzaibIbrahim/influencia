@@ -1,6 +1,6 @@
 package com.shah.starter.repository;
 
-import com.shah.starter.model.User;
+import com.shah.starter.entity.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

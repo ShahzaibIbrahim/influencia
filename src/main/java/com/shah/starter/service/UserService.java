@@ -1,6 +1,6 @@
 package com.shah.starter.service;
 
-import com.shah.starter.model.User;
+import com.shah.starter.entity.User;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
 package com.shah.starter.config;
 
-import com.shah.starter.model.Authority;
-import com.shah.starter.model.User;
+import com.shah.starter.entity.Authority;
+import com.shah.starter.entity.User;
 import com.shah.starter.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;

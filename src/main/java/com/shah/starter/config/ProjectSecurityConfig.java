@@ -50,15 +50,16 @@ public class ProjectSecurityConfig {
                 config.setMaxAge(3600L);
                 return config;
             }
-        }).and().csrf((csrf) -> csrf.csrfTokenRequestHandler(requestHandler).ignoringRequestMatchers("/exception", "/unsecured", "/register")
+        }).and().csrf((csrf) -> csrf.csrfTokenRequestHandler(requestHandler).ignoringRequestMatchers("/exception", "/unsecured", "/register", "/brand/register")
                         .csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse()))
                 .addFilterAfter(new CsrfCookieFilter(), BasicAuthenticationFilter.class)
                 .addFilterAfter(jwtTokenGeneratorFilter, BasicAuthenticationFilter.class)
                 .addFilterBefore(jwtTokenValidatorFilter, BasicAuthenticationFilter.class)
                 .authorizeHttpRequests()
                         .requestMatchers("/secured").hasRole("USER")
+                        .requestMatchers("/campaign/**").hasRole("BRAND")
                         .requestMatchers(appConfig.getLoginEndpoint()).authenticated()
-                        .requestMatchers("/exception", "/unsecured", "/register").permitAll()
+                        .requestMatchers("/exception", "/unsecured", "/register", "/brand/register").permitAll()
                 .and().formLogin()
                 .and().httpBasic();
         return http.build();

@@ -1,8 +1,10 @@
-package com.shah.starter.model;
+package com.shah.starter.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
+import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Set;
@@ -28,6 +30,20 @@ public class User {
 
     @OneToMany(mappedBy="user",fetch=FetchType.EAGER, cascade = CascadeType.PERSIST)
     private Set<Authority> authorities;
+
+    @ManyToOne
+    @JoinColumn(name = "brand_id")
+    @JsonBackReference
+    private Brand brand;
+
+    public User() {
+
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
     public int getId() {
         return id;
@@ -70,5 +86,13 @@ public class User {
             x.setUser(this);
         });
         this.authorities = authorities;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
     }
 }

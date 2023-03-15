@@ -1,6 +1,6 @@
 package com.shah.starter.service.impl;
 
-import com.shah.starter.model.User;
+import com.shah.starter.entity.User;
 import com.shah.starter.repository.UserRepository;
 import com.shah.starter.service.UserService;
 import jakarta.transaction.Transactional;
